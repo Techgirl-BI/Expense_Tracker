@@ -10,6 +10,10 @@ app.use(cors())
 dbConnect()
 //routes
 app.use('/users', userRoute)
+app.get('/', (req,res) => {
+    res.status(200).send("Welcome to my Expense tracker")
+    })
+    
 //error
 app.use(notFound)
 app.use(errorHandler)
