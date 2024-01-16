@@ -1,14 +1,13 @@
-import mongoose from 'mongoose'
-
+import mongoose from "mongoose";
 const dbConnect = async () => {
-    try {
-        await mongoose.connect(process.env.MONGO_URI, {
-            useCreateIndex: true,
-            useFindAndModify: false,
-           useUnifiedTopology: true,
-            useNewUrlParser: true,
-        })
-    } catch (error) {
-        console.log(`error ${error}`);
-    }
-}
+  try {
+    await mongoose.connect(
+      "mongodb+srv://rachealonimisi:ohunene123@racheals-cluster.c4ckoip.mongodb.net/expense_tracker",
+      { useUnifiedTopology: true, useNewUrlParser: true }
+    );
+    console.log(`Database is connected`);
+  } catch (error) {
+    console.log(`error ${error}`);
+  }
+};
+export default dbConnect;
