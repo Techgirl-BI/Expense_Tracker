@@ -31,6 +31,14 @@ const expenseSchema = new mongoose.Schema({
     required: [true, "type is required"],
     default: "Expense",
   }
+}, {
+  timeStamp: new Date,
+  toJSON: {
+    virtuals: true,
+  },
+  toObject: {
+    virtuals: true,
+  },
 });
 
 expenseSchema.plugin(mongoosePaginate)

@@ -29,6 +29,15 @@ const incomeSchema = mongoose.Schema({
         required: [true, "type is required"],
         default: "Income"
       }
+    }, {
+      timeStamp: new Date,
+    
+      toJSON: {
+        virtuals: true,
+      },
+      toObject: {
+        virtuals: true,
+      },
     });    
     incomeSchema.plugin(mongoosePaginate);
 const Income = mongoose.model("Income", incomeSchema)
